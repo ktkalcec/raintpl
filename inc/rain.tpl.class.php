@@ -441,7 +441,7 @@ class RainTPL{
 					if( isset($code[ 2 ]) ){
 
                                                 //include
-                                                $compiled_code .= '<?php $tpl = new '.get_called_class().';' .
+                                                $compiled_code .= '<?php $tpl = new '.get_class().';' .
                                                                   'if( $cache = $tpl->cache( "'.$include_template.'" ) )' .
 								  '	echo $cache;' .
 								  'else{' .
@@ -454,7 +454,7 @@ class RainTPL{
 					}
 					else{
                                                 //include
-                                                $compiled_code .= '<?php $tpl = new '.get_called_class().';' .
+                                                $compiled_code .= '<?php $tpl = new '.get_class().';' .
                                                                   '$tpl->assign( $this->var );' .
                                                                   ( !$loop_level ? null : '$tpl->assign( "key", $key'.$loop_level.' ); $tpl->assign( "value", $value'.$loop_level.' );' ).
                                                                   '$tpl->draw( "'.$include_template.'" );'.
