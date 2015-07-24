@@ -628,8 +628,8 @@ class RainTPL{
             $path = preg_replace( "#(/\./+)#", "/", $path );
             $path = str_replace( "@not_replace@", "://", $path );
             
-            while( preg_match( '#\.\./#', $path ) ){
-                $path = preg_replace('#\w+/\.\./#', '', $path );
+            while( preg_match( '/\w+\/\.\.\//', $path ) ){
+                $path = preg_replace('/\w+\/\.\.\//', '', $path );
             }
             return $path;
 	}
